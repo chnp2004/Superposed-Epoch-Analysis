@@ -57,11 +57,20 @@ The analysis follows these steps:
 ```
 
 Superposed-Epoch-Analysis/
-├── SEA.py               # Main SEA implementation
-├── README.md            # Project documentation
-├── data.xlxs            # Data
-├── requirements.txt     # Python dependencies
-└── .gitignore
+│
+├── data/
+│   └── data.xlsx                 # Input dataset (raw data)
+│
+├── src/
+│   └── sea.py                    # SEA implementation (main code)
+│
+├── results/
+│   └── figures/                  # Saved plots (optional)
+│
+├── README.md                     # Project documentation
+├── requirements.txt              # Python dependencies
+├── .gitignore                    # Ignored files
+└── LICENSE                       # MIT License
 
 ````
 
