@@ -2,8 +2,6 @@
 
 This repository provides a **Python implementation of Superposed Epoch Analysis (SEA)** to examine the relationship between **extreme inflation (CPI) events** and **GDP growth deviations** using standardized anomalies and Monte Carlo significance testing.
 
-The project is designed to be **reproducible, research-oriented, and suitable for academic or portfolio use**.
-
 ---
 
 ## Overview
