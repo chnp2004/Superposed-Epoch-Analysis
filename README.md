@@ -65,7 +65,7 @@ Superposed-Epoch-Analysis/
 │   └── sea.py                    # SEA implementation (main code)
 │
 ├── results/
-│   └── figures/                  # Saved plots (optional)
+│   └── figures/                  # Saved plots
 │
 ├── README.md                     # Project documentation
 ├── requirements.txt              # Python dependencies
