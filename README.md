@@ -1,26 +1,136 @@
-## 📊 Methodology
+# Superposed Epoch Analysis (SEA)
 
-1. **Data Standardization**
-   - CPI and GDP series are converted to z-scores.
+This repository provides a **Python implementation of Superposed Epoch Analysis (SEA)** to examine the relationship between **extreme inflation (CPI) events** and **GDP growth deviations** using standardized anomalies and Monte Carlo significance testing.
 
-2. **Event Identification**
-   - Extreme inflation events are defined as:
-     
-     `|CPI_z| ≥ 1.5`
+The project is designed to be **reproducible, research-oriented, and suitable for academic or portfolio use**.
 
-3. **Epoch Construction**
-   - For each event year, a symmetric time window is extracted:
-     
-     `t = [-k, ..., 0, ..., +k]`
-     
-     where `t = 0` represents the event year.
+---
 
-4. **Composite Signal Calculation**
-   - GDP anomalies are averaged across all events.
+## Overview
 
-5. **W-Statistic**
-   - Measures deviation of GDP at the event year relative to surrounding background years.
+Superposed Epoch Analysis is an event-based statistical method widely used in:
 
-6. **Monte Carlo Randomization Test**
-   - Random event years are sampled to generate a null distribution.
-   - Statistical significance is evaluated using a p-value.
+- Economics and macroeconometrics
+- Climate and environmental sciences
+- Space and solar physics
+- Event-driven time-series analysis
+
+In this project, SEA is applied to test whether **extreme inflation events** are systematically associated with **abnormal GDP growth patterns**.
+
+---
+
+## Methodology
+
+The analysis follows these steps:
+
+### 1. Data Standardization
+- CPI and GDP series are converted to z-scores to remove scale effects.
+
+### 2. Event Identification
+- Extreme inflation events are defined as years where:
+
+  `|CPI_z| ≥ 1.5`
+
+### 3. Epoch Construction
+- For each event year, a symmetric time window is extracted:
+
+  `t = [-k, ..., 0, ..., +k]`
+
+- Here:
+  - `t = 0` represents the event year
+  - `k` is the number of years before and after the event
+
+### 4. Composite Signal Calculation
+- GDP anomalies are averaged across all event windows to obtain a composite response.
+
+### 5. W-Statistic
+- The W-statistic measures the deviation of GDP at the event year relative to surrounding background years.
+
+### 6. Monte Carlo Randomization Test
+- Event years are randomly sampled to generate a null distribution.
+- Statistical significance is assessed using a p-value.
+
+---
+
+## Repository Structure
+
+```
+
+Superposed-Epoch-Analysis/
+├── SEA.py               # Main SEA implementation
+├── README.md            # Project documentation
+├── data.xlxs            # Data
+├── requirements.txt     # Python dependencies
+└── .gitignore
+
+````
+
+---
+
+## Requirements
+
+Install all dependencies using:
+
+```bash
+pip install -r requirements.txt
+````
+
+### Required Packages
+
+* numpy
+* pandas
+* scipy
+* matplotlib
+
+---
+
+## Usage
+
+### Input Data Format
+
+The input dataset must contain the following columns:
+
+| Column | Description         |
+| ------ | ------------------- |
+| Year   | Observation year    |
+| CPI    | Inflation rate (%)  |
+| GDP    | GDP growth rate (%) |
+
+### Running the Analysis
+
+```bash
+python SEA.py
+```
+
+---
+
+## Outputs
+
+The script generates:
+
+* Composite GDP response plot relative to inflation events
+* Null distribution of the W-statistic
+* Console output including:
+
+  * Observed W-statistic
+  * Monte Carlo p-value
+  * Hypothesis test conclusion
+
+---
+
+## Statistical Hypotheses
+
+* **Null Hypothesis (H₀):**
+  Extreme inflation events are not associated with systematic GDP deviations.
+
+* **Alternative Hypothesis (H₁):**
+  Extreme inflation events are associated with statistically significant GDP deviations.
+
+---
+
+## Author
+
+**CH Pranav**
+Applied Statistics • Econometrics • Time-Series Analysis
+
+---
